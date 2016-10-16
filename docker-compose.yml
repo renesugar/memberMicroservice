@@ -1,0 +1,37 @@
+version: '1'
+
+services:
+	postgres:
+		image: postgres:9.6
+		container_name: postgres
+		environment:
+			POSTGRES_USER: members
+			POSTGRES_PASSWORD: J5brHrAXFLQSif0K
+			POSTGRES_DB: members
+
+	members:
+		build: .
+		image: chamaconekt/members
+		links:
+		- postgres
+		container_name: members
+		depends_on:
+			- postgres
+		environment:
+
+	nginx:
+		image: nginx:1.11.11-alpine
+		links:
+			- members
+		container_name: nginx
+		command: nginx -g 'daemon off;' -c /etc/members-nginx/nginx.conf
+		depends_on:
+			- members
+		ports:
+			- 80:80
+		volumes_from:
+			- members
+
+volumes:
+	members-static-files:
+		driver:local
