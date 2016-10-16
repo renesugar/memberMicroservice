@@ -8,3 +8,6 @@ FROM dockerfile/ubuntu
 
 # Defining The Maintainer (Author)
 MAINTAINER William Ondeng'e
+
+# Update the repository sources list
+RUN apt-get update
