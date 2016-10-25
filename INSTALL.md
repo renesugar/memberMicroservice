@@ -1,25 +1,73 @@
+# Installation 
 
 
-# Installation via Docker Images
+# 1. Installation via Docker Images
 
-This project provides a simple way to incorporate chamaconekt-members and other microservices into your private
-infrastructure , provided that you use docker.
+This instruction provides a simple way to incorporate chamaconekt-members  into your private infrastructure 
+through Docker Images.
 
 This image provides a default, non-validating, ephemeral configuration that should work for most developers.
-By configuring a container using this image with a host-based volume (described below in the "Usage" section)
-an operator gains access to full configuration , customization and persistance of data.
+By configuring a container using this image with a host-based volume an operator gains access to full configuration, 
+customization and persistance of data.
 
-The image uses the following software:
 
-# Usage
+## Running locally
 
-To use this project successfully, you should first decide a few things:
+Build and run using Docker Compose:
 
-First, you must decide whether you will use a docker volume or not.When not using a volume, we say that the 
-container is in _ephemeral mode_, that is nothing will be persisted between the runs of the container. 
-Persistent mode is the alternative, which should be used in the case that you need to either customize your
-configuration . We recommend persistent mode for anything besides a development or test environment.
+```bash
+$ git clone https://github.com/chamaconekt/members
+```
 
-Finally, you must decide what ports to expose.
+```bash
+$ cd members
+```
+
+```bash
+$ docker-compose-up
+```
+
+## Deploying to Docker Cloud
+
+Install the [Docker Cloud client](https://docs.docker.com/docker-cloud/installing-cli/)
+
+```bash
+$ docker login
+```
+
+```bash
+$ docker-cloud stack up
+```
+
+## Docker Pull Command
+
+```bash
+$ docker pull chamaconektkenya/members
+```
+
+
+## What happens under the hood?
+
+Docker client contacts the Docker Daemon.
+Docker daemon pulls the "chamaconektkenya/members" image from Docker Hub
+Docker daemon creates a new container from the "chamaconektkenya/members" image.
+
+## How is this image created?
+
+This image is created via this [Dockerfile]().
+
+
+## Supported Docker versions
+
+This image is officially supported on Docker version 1.12.2
+
+Support for older versions (down to 1.6) is provided on a best-effort basis
+
+Please see the Docker installation documentation for details on how to upgrade your Docker daemon
+
+
+
+
+
 
 
