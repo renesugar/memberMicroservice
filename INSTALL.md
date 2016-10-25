@@ -29,6 +29,12 @@ $ docker-compose-up
 
 ## Deploying to Docker Cloud
 
+[![Deploy to Docker Cloud](https://files.cloud.docker.com/images/deploy-to-dockercloud.svg)](https://cloud.docker.com/stack/deploy/)
+
+Docker Cloud makes it easy for new Docker users to build and deploy their applications.Docker Cloud's operations
+interface empowers seasoned Docker users to manage a full spectrum of applications, from single container apps to
+distributed microservice stacks,anywhere.
+
 Install the [Docker Cloud client](https://docs.docker.com/docker-cloud/installing-cli/)
 
 ```bash
